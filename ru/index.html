@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="./binary_search.js"></script>    
+</head>
+<body>
+    <h1>Двоичный поиск</h1>
+    
+    <p>Пожалуйста, откройте консоль разработчика</p>
+    
+    <script type="text/javascript">
+        var phonebook = [
+          ["Абалаев Иван", "111-11-11"],        // элемент списка №0 
+          ["Баранов Сергей", "222-11-11"],      // элемент списка №1
+          ["Волкова Ольга", "333-11-11"],       // элемент списка №2
+          ["Громов Пётр", "444-11-11"],         // элемент списка №3
+          ["Добрая Анна", "555-11-11"],         // элемент списка №4
+          ["Ежова Елизавета", "666-11-11"]      // элемент списка №5
+        ];
+
+        var lookup_person = "Добрая Анна";
+
+        console.log("Используем телефонную книгу", phonebook);
+
+        console.log("Ищем", lookup_person);
+
+        console.log("Результат поиска", binary_search(phonebook, lookup_person));
+    </script>
+</body>
+</html>
