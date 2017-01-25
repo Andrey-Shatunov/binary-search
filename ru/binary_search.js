@@ -39,3 +39,27 @@ phonebook = [
 ]
 
 lookup_person = "Добрая Анна"
+
+
+function binary_search (phonebook, lookup_person) {
+    middle_pair = получить_среднюю_запись(phonebook)
+    middle_person = middle_pair[0]
+    if (middle_person == lookup_person) {
+        // ура, мы всё нашли
+        middle_phone = middle_pair[1]
+        return middle_phone;
+        // возвращаем телефон
+    }
+    if (middle_person < lookup_person) {
+        // искомая персона по алфавиту расположена после средней в рассматриваемой части телефонной книги
+        // значит искать надо во второй половине рассматриваемой части телефонной книги
+        half_of_the_task = получить_вторую_половину(phonebook)
+        return binary_search(half_of_the_task, lookup_person)
+    }
+    if (middle_person > lookup_person) {
+        // искомая персона по алфавиту расположена до средней в рассматриваемой части телефонной книги
+        // значит искать надо в первой половине рассматриваемой части телефонной книги
+        half_of_the_task = получить_первую_половину(phonebook)
+        return binary_search(half_of_the_task, lookup_person)
+    }
+}
