@@ -41,22 +41,22 @@ phonebook = [
 lookup_person = "Добрая Анна"
 
 
+function get_middle_index (phonebook) {
+    return Math.floor(phonebook.length / 2)
+}
+
 function get_middle_record (phonebook) {
-    console.log("we are inside get_middle_record now")
-    console.log("phonebook passed in is", phonebook)
-    console.log("phonebook.length is", phonebook.length)
-    middle_index = phonebook.length / 2
-    console.log("middle_index, calculated as `middle_index = phonebook.length / 2`, is", middle_index)        
+    middle_index = get_middle_index(phonebook)
     return phonebook[middle_index]
 }
 
 function get_first_half (phonebook) {
-    middle_index = phonebook.length / 2
+    middle_index = get_middle_index(phonebook)
     return phonebook.slice(0, middle_index)
 }
 
 function get_second_half (phonebook) {
-    middle_index = phonebook.length / 2
+    middle_index = get_middle_index(phonebook)
     return phonebook.slice(middle_index, phonebook.length)
 }
 
